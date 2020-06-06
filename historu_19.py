@@ -4,5 +4,9 @@ with open(filename) as f:
     reader = csv.reader(f)
     name = next(reader)
 
-    for index, column_name in enumerate(name):
-        print(index,column_name)
+    bigs = []
+    for n in reader:
+        big = (n[1])
+        bigs.append(big)
+
+    print(bigs)
