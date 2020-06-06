@@ -1,4 +1,5 @@
 import csv
+from datetime import datetime
 
 from matplotlib import pyplot as plt
 
@@ -7,17 +8,22 @@ with open(filename) as f:
     reader = csv.reader(f)
     name = next(reader)
 
-    bigs = []
+    dates, bigs = [], []
     for n in reader:
-        big = (n[5])
+        andate = datetime.strptime(n[1], '%Y-%m-%d')
+        dates.append(andate)
+
+        big = (n[2])
         bigs.append(big)
 
     figure = plt.figure(dpi=128, figsize=(10, 6))
-    plt.plot(bigs, c = 'red')
+    plt.plot(dates, bigs, c='green')
 
-    plt.title('максимальная температура', fontsize=24)
+    plt.title('Максимальная температура', fontsize=24)
     plt.xlabel('', fontsize=16)
-    plt.ylabel('Temperature(F)', fontsize=16)
+
+    figure.autofmt_xdate()
+    plt.ylabel('Temperature', fontsize=16)
     plt.tick_params(axis='both', which='major', labelsize=16)
 
     plt.show()
