@@ -2,14 +2,14 @@ import csv
 
 from matplotlib import pyplot as plt
 
-filename = 'minsk_06_2019.csv'
+filename = 'basa.csv'
 with open(filename) as f:
     reader = csv.reader(f)
     name = next(reader)
 
     bigs = []
     for n in reader:
-        big = (n[1])
+        big = (n[5])
         bigs.append(big)
 
     figure = plt.figure(dpi=128, figsize=(10, 6))
