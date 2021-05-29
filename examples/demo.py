@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-X = np.arange(-100, 100, 30)
+X = np.arange(-100, 500, 30)
 Y = np.arange(-100, 100, 20)
 U, V = np.meshgrid(X, Y)
 
@@ -15,4 +15,4 @@ ax.quiverkey(q, X=5.5, Y=1.1, U=100,
 # plt.show()
 
 # 2 Сохранение диаграммы в файле с отсечением лишнего пространства
-plt.savefig('demo.png', bbox_inches='tight')
+plt.savefig('demo1.png', bbox_inches='tight')
