@@ -12,5 +12,6 @@ ax.set_title("Квадраты чисел", fontsize=20)
 ax.set_xlabel("Значения", fontsize=10)
 ax.set_ylabel("Значения квадратов", fontsize=10)
 # Размер шрифта делений для обоих осей
-ax.tick_params(axis = 'both', labelsize=10)
+ax.tick_params(axis='both', labelsize=10)
+
 plt.show()
