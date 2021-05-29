@@ -5,7 +5,7 @@ squares = [x**2 for x in input_values]
 
 plt.style.use('bmh')
 fig, ax = plt.subplots()
-ax.scatter(input_values, squares, c=squares, cmap=plt.cm.Oranges,  s=10)
+ax.scatter(input_values, squares, c=squares, cmap=plt.cm.tab10, s=10)
 
 ax.set_title("Квадраты чисел", fontsize=20)
 ax.set_xlabel("Значения", fontsize=10)
