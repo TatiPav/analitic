@@ -8,9 +8,11 @@ while True:
     rn.fill_numbers()
 
     # Наносим точки на диаграмму
-    plt.style.use('dark_background')
+    plt.style.use('seaborn-deep')
     fig, ax = plt.subplots()
-    ax.scatter(rn.x_values, rn.y_values, s=15)
+    point_numbers = range(rn.n_points)
+    ax.scatter(rn.x_values, rn.y_values, c=point_numbers, cmap=plt.cm.prism,
+               edgecolors='none', s=15)
 
     # 1 Вывод диаграммы
     plt.show()
