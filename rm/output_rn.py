@@ -10,15 +10,18 @@ while True:
     # Наносим точки на диаграмму
     plt.style.use('dark_background')
     fig, ax = plt.subplots()
+    ax.scatter(rn.x_values, rn.y_values, s=15)
 
-    keep_running = input("Для выполнения нажмите 'y', а потом 'n' для записи в файл): ")
+    # 1 Вывод диаграммы
+    plt.show()
+
+    # 2 Сохранение диаграммы в файле с отсечением лишнего пространства
+    # plt.savefig('output.png', bbox_inches='tight')
+
+    keep_running = input("Для выполнения нажмите 'y', а потом 'n' "
+                         "для записи в файл или завершения): ")
     if keep_running == 'n':
         break
 
-ax.scatter(rn.x_values, rn.y_values, s=15)
 
-# 1 Вывод диаграммы
-# plt.show()
 
-# 2 Сохранение диаграммы в файле с отсечением лишнего пространства
-plt.savefig('output.png', bbox_inches='tight')
