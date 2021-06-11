@@ -1,14 +1,21 @@
 from urllib.request import urlopen
 from urllib.error import HTTPError
-from urllib.error import URLError
+from bs4 import BeautifulSoup
 
-try:
-    html = urlopen("https://footbolnonnnnnnn.ru/samye-izvestnye-futbolisty-v-mire.html")
-except HTTPError as e:
-    print(e)
-except URLError as e:
-    print(e)
+def printText(url):
+    try:
+        html = urlopen(url)
+    except HTTPError as e:
+        return None
+    try:
+        one = BeautifulSoup(html.read(), 'html.parser')
+        text = one.h3
+    except AttributeError as e:
+        return None
+    return text
 
+text = printText('https://footbolno.ru/samye-izvestnye-futbolisty-v-mire.html')
+if text == None:
+    print('Ошибки отсутствия информации')
 else:
-    print(html.read())
-
+    print(text)
