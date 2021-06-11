@@ -1,12 +1,14 @@
 from urllib.request import urlopen
 from urllib.error import HTTPError
-from bs4 import BeautifulSoup
+from urllib.error import URLError
 
 try:
-    html = urlopen("https://footbolno.ru/samye-izvestnye-futbolisty-v-mire.html")
+    html = urlopen("https://footbolnonnnnnnn.ru/samye-izvestnye-futbolisty-v-mire.html")
 except HTTPError as e:
     print(e)
+except URLError as e:
+    print(e)
+
 else:
-    one = BeautifulSoup(html.read(), 'html.parser')
-    # print(html.read())
-    print(one.h2)
+    print(html.read())
+
