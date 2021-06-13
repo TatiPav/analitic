@@ -1,3 +1,7 @@
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+import re
+
 html = urlopen('https://alexbrush.com/nastrojka-postoyannyh-ssylok-s-html-na-kontse.html')
 one = BeautifulSoup(html, 'html.parser')
 
