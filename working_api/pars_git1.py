@@ -1,6 +1,6 @@
 import requests
 
-url = 'https://api.github.com/search/repositories?q=language:python&sort=stars'
+url = 'https://api.github.com/search/repositories?q=language:java&sort=stars'
 
 headers = {'Accept': 'application/vnd.github.v3+json'}
 
